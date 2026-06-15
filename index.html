@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>夺旗猫跑酷</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="game-shell">
+      <section class="hero-panel" aria-label="夺旗猫跑酷游戏">
+        <div class="topbar">
+          <div class="brand-lockup" aria-label="夺旗猫游戏 Logo">
+            <img class="logo-mark" src="assets/logo/duoqimao-logo.webp" alt="夺旗猫 Logo">
+            <div>
+              <p class="eyebrow">Pixel Runner</p>
+              <h1>夺旗猫跑酷</h1>
+            </div>
+          </div>
+          <button class="sound-toggle" id="soundToggle" type="button" aria-pressed="true">音效：开</button>
+        </div>
+
+        <div class="score-row" aria-label="游戏数据">
+          <div class="metric">
+            <span>距离</span>
+            <strong id="distanceText">0m</strong>
+          </div>
+          <div class="metric">
+            <span>分数</span>
+            <strong id="fishText" class="pulse-target">0</strong>
+          </div>
+          <div class="metric">
+            <span>生命</span>
+            <strong id="lifeText">3</strong>
+          </div>
+          <div class="metric flag-metric">
+            <span>终点</span>
+            <strong id="flagText" class="pulse-target">3000m</strong>
+          </div>
+        </div>
+
+        <div class="canvas-wrap">
+          <div class="progress-track" aria-label="关卡进度">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+          <canvas id="gameCanvas" width="960" height="540" aria-label="夺旗猫跑酷游戏画面"></canvas>
+          <div class="overlay is-visible" id="startOverlay">
+            <div class="overlay-card">
+              <p class="kicker">任务目标</p>
+              <h2>冲过街区，抢下终点旗帜</h2>
+              <p class="overlay-copy">自动向右奔跑，空格二段跳，碰怪掉血，吃 10 个金币可回血，3000 米夺旗通关。</p>
+              <div class="character-select" aria-label="角色选择">
+                <button class="character-card is-selected" type="button" data-character="xiaohei" aria-pressed="true">
+                  <img src="assets/mecha-cat-run/frames/frame_001.webp" alt="小黑">
+                  <strong>小黑</strong>
+                  <span>3 滴血 · 跳得高</span>
+                </button>
+                <button class="character-card" type="button" data-character="dazhuang" aria-pressed="false">
+                  <img src="assets/hercules-sprite-run/frames/frame_001.webp" alt="大壮">
+                  <strong>大壮</strong>
+                  <span>4 滴血 · 跳得低</span>
+                </button>
+              </div>
+              <button id="startButton" type="button">开始奔跑</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="controls" aria-label="控制说明">
+          <div class="control-copy">
+            <span>键盘：空格 / ↑ 跳跃，支持二段跳，P 暂停</span>
+            <span>移动端：点击跳跃按钮</span>
+          </div>
+          <div class="touch-controls">
+            <button id="jumpButton" type="button">跳跃 / 二段跳</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="game.js"></script>
+  </body>
+</html>
