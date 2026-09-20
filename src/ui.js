@@ -54,6 +54,7 @@
 
     bindClick("playButton", () => handlers.openScreen("levels"));
     bindClick("menuChars", () => handlers.openScreen("chars"));
+    bindClick("levelChars", () => handlers.openScreen("chars", { returnTo: "levels" }));
     bindClick("menuHelp", () => handlers.openScreen("help"));
     bindClick("menuReset", () => handlers.resetProfile());
     bindClick("pauseResume", () => handlers.resume());

@@ -238,14 +238,14 @@
     if (document.getElementById("skillName")) document.getElementById("skillName").textContent = characterSkillName();
   }
 
-  function openScreen(name) {
+  function openScreen(name, options = {}) {
     if (!name) {
       ui.openScreen(null);
       return;
     }
     audio.play("ui");
     if (name === "menu") resumeAttract();
-    ui.openScreen(name, { returnTo: name === "levels" ? "menu" : "menu" });
+    ui.openScreen(name, { returnTo: options.returnTo || "menu" });
   }
 
   function resetProfile() {

@@ -231,16 +231,23 @@ canvas {
 }
 
 .heart {
-  width: 20px;
+  display: inline-block;
+  width: 18px;
   height: 18px;
-  background: rgba(255, 255, 255, 0.16);
-  clip-path: path("M10 17C4 12.6 0 9.4 0 5.6 0 2.6 2.3 0 5.2 0 7 0 8.8 1 10 2.7 11.2 1 13 0 14.8 0 17.7 0 20 2.6 20 5.6c0 3.8-4 7-10 11.4z");
-  transition: background 140ms ease, transform 140ms ease;
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 17px;
+  line-height: 18px;
+  text-align: center;
+  transition: color 140ms ease, transform 140ms ease;
+}
+
+.heart::before {
+  content: "\2665";
 }
 
 .heart.is-on {
-  background: var(--red);
-  filter: drop-shadow(0 2px 0 rgba(0, 0, 0, 0.35));
+  color: var(--red);
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
 }
 
 .chips {
